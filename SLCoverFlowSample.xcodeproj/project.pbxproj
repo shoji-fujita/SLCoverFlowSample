@@ -14,6 +14,8 @@
 		CE0C921C1DF5B08500122021 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0C921A1DF5B08500122021 /* LaunchScreen.storyboard */; };
 		CE0C92271DF5B08500122021 /* SLCoverFlowSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0C92261DF5B08500122021 /* SLCoverFlowSampleTests.swift */; };
 		CE0C92321DF5B08500122021 /* SLCoverFlowSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0C92311DF5B08500122021 /* SLCoverFlowSampleUITests.swift */; };
+		CE0C92441DF5B0B100122021 /* SLCoverFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0C92411DF5B0B100122021 /* SLCoverFlowView.m */; };
+		CE0C92451DF5B0B100122021 /* SLCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0C92431DF5B0B100122021 /* SLCoverView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,11 @@
 		CE0C922D1DF5B08500122021 /* SLCoverFlowSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SLCoverFlowSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0C92311DF5B08500122021 /* SLCoverFlowSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLCoverFlowSampleUITests.swift; sourceTree = "<group>"; };
 		CE0C92331DF5B08500122021 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE0C923F1DF5B0B000122021 /* SLCoverFlowSample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SLCoverFlowSample-Bridging-Header.h"; sourceTree = "<group>"; };
+		CE0C92401DF5B0B100122021 /* SLCoverFlowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLCoverFlowView.h; sourceTree = "<group>"; };
+		CE0C92411DF5B0B100122021 /* SLCoverFlowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLCoverFlowView.m; sourceTree = "<group>"; };
+		CE0C92421DF5B0B100122021 /* SLCoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLCoverView.h; sourceTree = "<group>"; };
+		CE0C92431DF5B0B100122021 /* SLCoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLCoverView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +107,11 @@
 				CE0C92111DF5B08500122021 /* AppDelegate.swift */,
 				CE0C92131DF5B08500122021 /* ViewController.swift */,
 				CE0C92151DF5B08500122021 /* Main.storyboard */,
+				CE0C92461DF5B0B900122021 /* SLCoverFlow */,
 				CE0C92181DF5B08500122021 /* Assets.xcassets */,
 				CE0C921A1DF5B08500122021 /* LaunchScreen.storyboard */,
 				CE0C921D1DF5B08500122021 /* Info.plist */,
+				CE0C923F1DF5B0B000122021 /* SLCoverFlowSample-Bridging-Header.h */,
 			);
 			path = SLCoverFlowSample;
 			sourceTree = "<group>";
@@ -123,6 +132,17 @@
 				CE0C92331DF5B08500122021 /* Info.plist */,
 			);
 			path = SLCoverFlowSampleUITests;
+			sourceTree = "<group>";
+		};
+		CE0C92461DF5B0B900122021 /* SLCoverFlow */ = {
+			isa = PBXGroup;
+			children = (
+				CE0C92401DF5B0B100122021 /* SLCoverFlowView.h */,
+				CE0C92411DF5B0B100122021 /* SLCoverFlowView.m */,
+				CE0C92421DF5B0B100122021 /* SLCoverView.h */,
+				CE0C92431DF5B0B100122021 /* SLCoverView.m */,
+			);
+			name = SLCoverFlow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +214,7 @@
 					CE0C920D1DF5B08500122021 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 2TVHTVBM2Y;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					CE0C92211DF5B08500122021 = {
@@ -263,6 +284,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE0C92141DF5B08500122021 /* ViewController.swift in Sources */,
+				CE0C92451DF5B0B100122021 /* SLCoverView.m in Sources */,
+				CE0C92441DF5B0B100122021 /* SLCoverFlowView.m in Sources */,
 				CE0C92121DF5B08500122021 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,11 +438,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 2TVHTVBM2Y;
 				INFOPLIST_FILE = SLCoverFlowSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.shoji-fujita.SLCoverFlowSample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SLCoverFlowSample/SLCoverFlowSample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -428,11 +454,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 2TVHTVBM2Y;
 				INFOPLIST_FILE = SLCoverFlowSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.shoji-fujita.SLCoverFlowSample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SLCoverFlowSample/SLCoverFlowSample-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

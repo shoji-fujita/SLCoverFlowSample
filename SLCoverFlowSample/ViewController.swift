@@ -9,17 +9,38 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var coverFlowAreaView: UIView!
+    var coverFlowView = SLCoverFlowView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        coverFlowView.frame = coverFlowAreaView.bounds
+        coverFlowAreaView.addSubview(coverFlowView)
+        coverFlowView.delegate = self
+        coverFlowView.coverSize = CGSize(width: 100, height: 200)
+        coverFlowView.coverSpace = 50
+        coverFlowView.coverAngle = 0.0
+        coverFlowView.coverScale = 1.2
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        coverFlowView.reloadData()
     }
-
-
+    
 }
 
+extension ViewController: SLCoverFlowViewDataSource {
+    
+    func number(ofCovers coverFlowView: SLCoverFlowView!) -> Int {
+        return 5
+    }
+    
+    func coverFlowView(_ coverFlowView: SLCoverFlowView!, coverViewAt index: Int) -> SLCoverView! {
+        let view = SLCoverView()
+        view.backgroundColor = .red
+        return view
+    }
+}
